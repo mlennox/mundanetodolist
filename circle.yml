@@ -1,5 +1,5 @@
 machine:
     node:
         version: 6.0.0
-pre:
+#pre:
 #    - npm install -g npm@3.8.6
