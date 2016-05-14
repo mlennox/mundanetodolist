@@ -20,5 +20,15 @@
   "bugs": {
     "url": "https://github.com/mlennox/mundanetodolist/issues"
   },
-  "homepage": "https://github.com/mlennox/mundanetodolist#readme"
+  "homepage": "https://github.com/mlennox/mundanetodolist#readme",
+  "devDependencies": {
+    "ava": "^0.14.0",
+    "babel-cli": "^6.8.0",
+    "babel-preset-node6": "^11.0.0",
+    "babel-preset-react": "^6.5.0"
+  },
+  "dependencies": {
+    "koa": "^2.0.0",
+    "koa-router": "^7.0.1"
+  }
 }
