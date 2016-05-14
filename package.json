@@ -1,0 +1,24 @@
+{
+  "name": "mundanetodolist",
+  "version": "1.0.0",
+  "description": "mundane to-do list with node6 and react",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/mlennox/mundanetodolist.git"
+  },
+  "keywords": [
+    "node",
+    "react",
+    "js"
+  ],
+  "author": "Mark Lennox <mark@webpusher.ie>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mlennox/mundanetodolist/issues"
+  },
+  "homepage": "https://github.com/mlennox/mundanetodolist#readme"
+}
