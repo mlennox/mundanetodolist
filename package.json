@@ -4,13 +4,15 @@
   "description": "mundane to-do list with node6 and react",
   "main": "server/index.js",
   "scripts": {
-    "test": "ava logger/index.test.js",
-    "start": "babel-node server/index.js",
-    "dev": "nodemon -w server --exec npm start",
+    "test": "nyc ava",
+    "test:watch": "nodemon --exec npm test",
     "transpile": "npm run t:server && npm run t:config && npm run t:logger",
     "t:server": "babel server --out-dir deploy/server",
     "t:config": "babel config --out-dir deploy/config",
-    "t:logger": "babel logger --out-dir deploy/logger"
+    "t:logger": "babel logger --out-dir deploy/logger",
+    "start": "babel-node server/index.js",
+    "dev": "nodemon -w server --exec npm start",
+    "prod": "node server/index.js"
   },
   "repository": {
     "type": "git",
@@ -28,6 +30,9 @@
   },
   "homepage": "https://github.com/mlennox/mundanetodolist#readme",
   "ava": {
+    "files": [
+      "**/*.test.js"
+    ],
     "require": [
       "babel-register"
     ],
@@ -38,9 +43,11 @@
     "babel-cli": "^6.8.0",
     "babel-core": "^6.8.0",
     "babel-plugin-rewire": "^1.0.0-rc-3",
+    "babel-plugin-transform-export-extensions": "^6.8.0",
     "babel-preset-node6": "^11.0.0",
     "babel-preset-react": "^6.5.0",
-    "nodemon": "^1.9.2"
+    "nodemon": "^1.9.2",
+    "nyc": "^6.4.4"
   },
   "dependencies": {
     "debug": "^2.2.0",
