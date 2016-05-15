@@ -4,7 +4,9 @@
   "description": "mundane to-do list with node6 and react",
   "main": "index.js",
   "scripts": {
-    "test": "test"
+    "test": "test",
+    "start": "babel-node server/index.js",
+    "dev": "nodemon -w server --exec npm start"
   },
   "repository": {
     "type": "git",
@@ -24,12 +26,16 @@
   "devDependencies": {
     "ava": "^0.14.0",
     "babel-cli": "^6.8.0",
+    "babel-core": "^6.8.0",
     "babel-preset-node6": "^11.0.0",
-    "babel-preset-react": "^6.5.0"
+    "babel-preset-react": "^6.5.0",
+    "nodemon": "^1.9.2"
   },
   "dependencies": {
+    "debug": "^2.2.0",
     "koa": "^2.0.0",
     "koa-router": "^7.0.1",
-    "react": "^15.0.2"
+    "react": "^15.0.2",
+    "yargs": "^4.7.0"
   }
 }
