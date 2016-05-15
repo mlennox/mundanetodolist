@@ -4,7 +4,7 @@
   "description": "mundane to-do list with node6 and react",
   "main": "server/index.js",
   "scripts": {
-    "test": "nyc ava",
+    "test": "nyc ava && nyc report --reporter=html ",
     "test:watch": "nodemon --exec npm test",
     "transpile": "npm run t:server && npm run t:config && npm run t:logger",
     "t:server": "babel server --out-dir deploy/server",
