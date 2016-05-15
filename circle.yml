@@ -1,5 +1,11 @@
 machine:
     node:
         version: 6.0.0
-#pre:
-#    - npm install -g npm@3.8.6
+
+dependencies:
+  pre:
+    - npm install -g istanbul
+
+general:
+  artifacts:
+    - ./nyc_output
