@@ -2,11 +2,15 @@
   "name": "mundanetodolist",
   "version": "1.0.0",
   "description": "mundane to-do list with node6 and react",
-  "main": "index.js",
+  "main": "server/index.js",
   "scripts": {
-    "test": "test",
+    "test": "ava",
     "start": "babel-node server/index.js",
-    "dev": "nodemon -w server --exec npm start"
+    "dev": "nodemon -w server --exec npm start",
+    "transpile": "npm run t:server && npm run t:config && npm run t:logger",
+    "t:server": "babel server --out-dir deploy/server",
+    "t:config": "babel config --out-dir deploy/config",
+    "t:logger": "babel logger --out-dir deploy/logger"
   },
   "repository": {
     "type": "git",
@@ -23,10 +27,17 @@
     "url": "https://github.com/mlennox/mundanetodolist/issues"
   },
   "homepage": "https://github.com/mlennox/mundanetodolist#readme",
+  "ava": {
+    "babel": {
+      "presets": ["node6","react"],
+      "plugins": ["rewire"]
+    }
+  },
   "devDependencies": {
     "ava": "^0.14.0",
     "babel-cli": "^6.8.0",
     "babel-core": "^6.8.0",
+    "babel-plugin-rewire": "^1.0.0-rc-3",
     "babel-preset-node6": "^11.0.0",
     "babel-preset-react": "^6.5.0",
     "nodemon": "^1.9.2"

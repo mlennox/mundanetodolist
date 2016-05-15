@@ -35,3 +35,6 @@ node_modules
 # IDE stuff
 .idea
 .DS_Store
+
+# transpiled deployment folders
+deploy
