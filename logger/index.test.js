@@ -1,0 +1,25 @@
+/**
+ * Created by mlennox on 15/05/2016.
+ */
+import test from 'ava'
+import { create_logger, __RewireAPI__ as loggerRewire } from './index'
+
+test.before(() => {
+    loggerRewire.__Rewire__('debug_logger', function(module_name, suffix) {
+        // we rewire the debug library to only set the passed module name and suffix
+        return {module_name, suffix}
+    })
+})
+
+test.after(() => {
+    loggerRewire.__ResetDependency__('debug_logger')
+})
+
+test('logger should properly set the label to "app:testlabel"', t => {
+    var test_label = 'testlabel'
+    var expected_label = 'app:testlabel'
+
+    var logger = create_logger(test_label)
+    t.is(expected_label, logger.debug.module_name)
+    t.deepEqual(null, logger.debug.suffix)
+})

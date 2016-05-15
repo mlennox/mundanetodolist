@@ -1,3 +1,8 @@
 {
-  "presets": ["node6","react"]
+  "presets": ["node6","react"],
+  "env": {
+    "development": {
+      "plugins": ["rewire"]
+    }
+  }
 }

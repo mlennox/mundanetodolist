@@ -4,7 +4,7 @@
   "description": "mundane to-do list with node6 and react",
   "main": "server/index.js",
   "scripts": {
-    "test": "ava",
+    "test": "ava logger/index.test.js",
     "start": "babel-node server/index.js",
     "dev": "nodemon -w server --exec npm start",
     "transpile": "npm run t:server && npm run t:config && npm run t:logger",
@@ -28,10 +28,10 @@
   },
   "homepage": "https://github.com/mlennox/mundanetodolist#readme",
   "ava": {
-    "babel": {
-      "presets": ["node6","react"],
-      "plugins": ["rewire"]
-    }
+    "require": [
+      "babel-register"
+    ],
+    "babel": "inherit"
   },
   "devDependencies": {
     "ava": "^0.14.0",
