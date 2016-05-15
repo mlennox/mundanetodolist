@@ -8,4 +8,4 @@ dependencies:
 
 general:
   artifacts:
-    - ./nyc_output
+    - ./.nyc_output
