@@ -1,11 +1,12 @@
 {
-  "presets": ["node6","react"],
+  "presets": ["node6", "react"],
+  "plugins": ["transform-async-to-generator"],
   "env": {
     "development": {
-      "plugins": ["rewire"]
+      "plugins": ["rewire", "transform-async-to-generator"]
     },
     "test": {
-      "plugins": ["rewire"]
+      "plugins": ["rewire", "transform-async-to-generator"]
     }
   }
 }
