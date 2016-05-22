@@ -4,14 +4,14 @@
   "description": "mundane to-do list with node6 and react",
   "main": "server/index.js",
   "scripts": {
-    "test": "nyc ava && nyc report --reporter=html",
-    "test:watch": "ava --watch",
-    "transpile": "npm run t:server && npm run t:config && npm run t:logger",
+    "test": "NODE_ENV=test DEBUG=app:* nyc ava && nyc report --reporter=html",
+    "test:watch": "NODE_ENV=test DEBUG=app:* ava --watch",
+    "transpile": "NODE_ENV=prod npm run t:server && npm run t:config && npm run t:logger",
     "t:server": "babel server --out-dir deploy/server",
     "t:config": "babel config --out-dir deploy/config",
     "t:logger": "babel logger --out-dir deploy/logger",
     "start": "babel-node server/index.js",
-    "dev": "nodemon -w server --exec npm start",
+    "dev": "nodemon -w server -w app --exec npm start",
     "prod": "node server/index.js"
   },
   "repository": {
