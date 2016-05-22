@@ -57,3 +57,6 @@ Now when we run our tests we should have the rewire functionality available to u
 
 
 ## React and Redux
+
+### Testing
+We'll use Enzyme and Ava to test the React components.

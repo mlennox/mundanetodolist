@@ -1,12 +1,24 @@
 {
   "presets": ["node6", "react"],
-  "plugins": ["transform-async-to-generator"],
+  "plugins": [
+    "transform-async-to-generator",
+    "transform-class-properties"
+  ],
   "env": {
     "development": {
-      "plugins": ["rewire", "transform-async-to-generator"]
+      "plugins": [
+        "rewire",
+        "transform-async-to-generator",
+        "transform-class-properties"
+      ]
     },
     "test": {
-      "plugins": ["rewire", "transform-async-to-generator"]
+      "sourceMaps": "inline",
+      "plugins": [
+        "rewire",
+        "transform-async-to-generator",
+        "transform-class-properties"
+      ]
     }
   }
 }
