@@ -17,7 +17,7 @@ class DisplayImage extends React.Component {
             <p>There are {this.props.todo_items.length} to-do items in the list : {this.props.todo_items}</p>
             </section>
     }
-    
+
 }
 
 export default DisplayImage
